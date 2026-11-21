@@ -69,7 +69,7 @@ export async function diagnoseAuthSetup() {
 export async function listProfiles() {
   const { data, error } = await sb()
     .from('profiles')
-    .select('id, display_name, auth_email, created_at, last_login_at')
+    .select('id, display_name, auth_email, last_login_at')
     .order('display_name');
   throwIf(error, '登録者の読み込み');
   return data || [];
