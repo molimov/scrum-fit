@@ -121,8 +121,7 @@ export async function register({ displayName, email, pin }) {
 /* ---------- ログイン ---------- */
 
 export async function login(profile, pin) {
-  if (!PIN_RE.test(pin)) throw new Error('PINは数字6桁で入力してください。');
-  const client = sb();
+if (!LOGIN_PIN_RE.test(pin)) throw new Error('PINは数字4桁または6桁で入力してください。');
   const { data, error } = await client.auth.signInWithPassword({
     email: profile.auth_email,
     password: derivePassword(pin, profile.auth_email)
