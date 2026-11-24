@@ -112,7 +112,7 @@ function pinStep() {
   return `
     ${header(`${esc(picked.display_name)} さん`, 'PINを入力してください。')}
     <form id="pinForm" autocomplete="off">
-      ${pinField('pin', 'PIN（数字6桁）')}
+      ${pinField('pin', 'PIN（4桁または6桁）')}
       <button class="md-button md-button--filled md-button--block md-button--tall md-state" type="submit">
         ${icon('lock')}ログイン
       </button>
