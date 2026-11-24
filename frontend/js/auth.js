@@ -22,6 +22,7 @@ const AUTH_DOMAIN = 'liftlog.app';
    総当たりが現実的だった。6桁にして100万通りに広げている。 */
 export const PIN_LENGTH = 6;
 export const PIN_RE = new RegExp(`^\\d{${PIN_LENGTH}}$`);
+const LOGIN_PIN_RE = /^(\d{4}|\d{6})$/;  // 旧4桁PINの人もログインできるように
 
 const randomAuthEmail = () =>
   'u' + crypto.randomUUID().replace(/-/g, '').slice(0, 20) + '@' + AUTH_DOMAIN;
